@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System - Dashboard</title>
+    <style>
+        /* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    display: flex;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: block;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #0056b3;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.logout {
+    margin-top: auto;
+    text-align: center;
+}
+
+.logout a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    background-color:red;
+    border-radius: 5px;
+}
+
+.logout a:hover {
+    background-color:#d9534f;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.main-content header {
+    margin-bottom: 20px;
+}
+
+.main-content header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.main-content header p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Dashboard Widgets */
+.dashboard-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.widget {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.widget h3 {
+    font-size: 1.3em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.widget p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <h2>EMS Dashboard</h2>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="financee.html">Finance</a></li>
+            <li><a href="department.html">Departments</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="leave.html">Leave</a></li>
+            <li><a href="registration.html">Register New Employee</a></li>
+        </ul>
+        <div class="logout">
+            <a href="EMS selector.html">Login</a>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <header>
+            <h1>Welcome,Nyongesa W ABEL</h1>
+            <p>Overview of your dashboard</p>
+        </header>
+
+        <!-- Dashboard Widgets -->
+        <div class="dashboard-widgets">
+            <div class="widget">
+                <h3>Total Employees</h3>
+                <p>200</p>
+            </div>
+            <div class="widget">
+                <h3>Pending Leave Requests</h3>
+                <p>5</p>
+            </div>
+            <div class="widget">
+                <h3>Recent Finance Approvals</h3>
+                <p>45</p>
+            </div>
+            <div class="widget">
+                <h3>Procurement Requests</h3>
+                <p>6</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
