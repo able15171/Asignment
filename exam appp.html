@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam App</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 20px;
+    background-color:whitesmoke;
+}
+
+.exam-app {
+    display: inline-block;
+    text-align: left;
+    margin-right: 100px;
+    
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    font-family: serif;
+    margin-right: -250px;
+    margin-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 250%;
+    margin-top: 10px;
+    
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+    
+
+th, td {
+    padding: 5px;
+    text-align: center;
+    font-family:serif;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+b {
+    font-weight: bold;
+}
+.y{
+    text-align:right ;
+}
+.m{
+    text-align: left;
+}
+.E{
+    font-family: serif;
+    color: black;
+    font-weight: bold;
+}
+td input{
+    border: none;
+    background-color: whitesmoke;
+    
+}
+td input:focus{
+    outline: none;
+}
+
+
+    
+    
+
+    
+
+
+    </style>
+</head>
+<body>
+    <div class="app-container">
+    <div class="exam-app">
+        <h1>Exam App</h1>
+        <table>
+            <tr>
+                <th >Name</th>
+                <th >CIM 322</th>
+            </tr>
+            <tr>
+                <td class="m">Mary</td>
+                <td class="y"><input type="number" id="maryScore" value="80" min="0" max="100"></td>
+            </tr>
+            <tr>
+                <td class="m">John</td>
+                <td class="y"><input type="number" id="johnScore" value="40" min="0" max="100"></td>
+            </tr>
+            <tr>
+                <td>Average</td>
+                <td class="y" id="average">60</td>
+            </tr>
+        </table>
+        <p>Thanks for using the <dfn class="E"><b>Exam App</b></dfn></p>
+        
+    </div>
+    <script>
+        
+function calculateAverage() {
+    // Get input values
+    const maryScore = parseFloat(document.getElementById("maryScore").value) || 0;
+    const johnScore = parseFloat(document.getElementById("johnScore").value) || 0;
+
+    // Calculate the average
+    const average = (maryScore + johnScore) / 2;
+
+    // Update the average value in the table
+    document.getElementById("average").textContent = average.toFixed(2);
+}
+
+// Attach event listeners to input fields to recalculate on change
+document.getElementById("maryScore").addEventListener("input", calculateAverage);
+document.getElementById("johnScore").addEventListener("input", calculateAverage);
+
+// Initial calculation
+calculateAverage();
+
+    </script>
+    
+</body>
+</html>

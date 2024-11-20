@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Perimeter</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.app-container {
+    display: inline-block;
+    text-align: left;
+    line-height: 1.8;
+    background-color:yellow;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+input {
+    width: 60px;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+border: none;
+}
+input:focus{
+    outline: none;
+}
+
+span {
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <h1>Calculate Perimeter</h1>
+        <p>
+            Length: <input type="number" id="length" value="2.33" step="0.01" min="0"> <br>
+            Width: <input type="number" id="width" value="4.44" step="0.01" min="0"> <br>
+            Perimeter: <span id="perimeter">13.54</span>
+        </p>
+        <p>Thanks for using the Area Perimeter App!</p>
+    </div>
+    <script>
+        // Function to calculate and display the perimeter
+function calculatePerimeter() {
+    // Get the values of length and width
+    const length = parseFloat(document.getElementById("length").value) || 0;
+    const width = parseFloat(document.getElementById("width").value) || 0;
+
+    // Calculate the perimeter
+    const perimeter = 2 * (length + width);
+
+    // Display the result
+    document.getElementById("perimeter").textContent = perimeter.toFixed(2);
+}
+
+// Attach event listeners to input fields to recalculate on change
+document.getElementById("length").addEventListener("input", calculatePerimeter);
+document.getElementById("width").addEventListener("input", calculatePerimeter);
+
+// Initial calculation
+calculatePerimeter();
+
+    </script>
+</body>
+</html>
